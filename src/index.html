@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Agro management</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script type="text/javascript" src="js/index.js">
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpy3TyuffznEauekDIy9eQ81kzSW1iY-M&callback=initMap&libraries=&v=weekly"></script>
+  <script src="js/renderer.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Inici <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Variables</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cultius</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Zones</a>
+          </li>
+        </ul>
+
+        <a class="nav-item" href="#" id="profile"><img
+            src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg"
+            style="width:50px; height: 50px;">Perfil</a>
+      </div>
+    </nav>
+  </header>
+
+  <span>Zona X</span>
+  <br>
+  <span>Població (Latitud, Longitud)</span>
+  <br>
+  <span>Dia i hora</span>
+  <br>
+  <div id="map"></div>
+  <div id="variables">
+    <span id="variable">Variable 1 actual:</span>
+    <br>
+    <span id="variable">Variable 2 actual:</span>
+    <br>
+    <span id="variable">Variable 3 actual:</span>
+  </div>
+  <div id="alertes">
+    <span>Alertes 24 hores</span>
+    <br>
+    <span>Alerta 1</span>
+    <br>
+    <span>Alerta 2</span>
+  </div>
+</body>
+
 </html>
