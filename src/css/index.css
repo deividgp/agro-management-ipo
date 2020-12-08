@@ -1,6 +1,6 @@
 aside {
-    margin-left: 10px;
-    padding-top: 70px;
+    margin: 2%;
+    padding: 2%;
 }
 
 #map {
@@ -13,11 +13,9 @@ aside {
     float: right;
 }
 
-#variable {
-    margin-left: 10px;
+#variables {
+    padding-left: 10px;
 }
-
-#variables {}
 
 #alertes {
     clear: left;

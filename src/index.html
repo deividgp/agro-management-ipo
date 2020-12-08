@@ -28,34 +28,91 @@
 
 <body>
   <header>
-    <div id="nav"></div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active" id="inici">
+            <a class="nav-link" href="index.html">Inici</a>
+          </li>
+          <li class="nav-item dropdown" id="variables">
+            <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Variables</a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a class="dropdown-item" href="variables.html">Variable 1</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" id="cultius">
+            <a class="nav-link" href="cultius.html">Cultius</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown" id="zones">
+            <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Zones</a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a class="dropdown-item" onclick="onClickZona(1)" href="#">Zona 1</a></li>
+              <li><a class="dropdown-item" onclick="onClickZona(2)" href="#">Zona 2</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-item  dropdown-toggle" href="#" data-toggle="dropdown"><img
+                src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg"
+                style="width:40px; height: 40px;"></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a class="dropdown-item" href="#">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Configuració</a></li>
+              <li><a class="dropdown-item" href="#" onclick="tancarSessio()">Tancar sessió</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
   <aside>
-
-    <span>Zona X</span>
+    <span id="zona">Zona</span>
     <br>
-    <span>Població (Latitud, Longitud)</span>
+    <span id="poblacio">Població (Latitud, Longitud)</span>
     <br>
-    <span>Dia i hora</span>
+    <span id="dia-hora">Dia i hora</span>
     <br>
     <div id="map"></div>
     <div id="variables">
-      <span id="variable" >Variable 1 actual:</span>
+      <span id="temperatura">Temperatura</span>
       <br>
-      <span id="variable">Variable 2 actual:</span>
+      <span id="humitat">Humitat relativa</span>
       <br>
-      <span id="variable">Variable 3 actual:</span>
+      <span id="pluja">Pluja</span>
+      <br>
+      <span id="humitatfulla">Humitat en fulla</span>
+      <br>
+      <span id="eto">ETo</span>
+      <br>
+      <span id="dpv">DPV</span>
+      <br>
+      <span id="humitatsol">Humitat al sòl</span>
     </div>
-    <div id="alertes">
-      <span>Alertes 24 hores</span>
-      <br>
-      <span>Alerta 1</span>
-      <br>
-      <span>Alerta 2</span>
-    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Historial d'alertes 24 hores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row" id="alertatemp">Alerta temperatura</th>
+        </tr>
+        <tr>
+          <td scope="row" id="alertahumi">Alerta humitat</th>
+        </tr>
+        <tr>
+          <td scope="row" id="alertapluja">Alerta pluja</th>
+        </tr>
+      </tbody>
+    </table>
   </aside>
   <footer>
-    <div id="footer" style="left: 0px;"></div>
+    <div id="footer"></div>
   </footer>
 </body>
 

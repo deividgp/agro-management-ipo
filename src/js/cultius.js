@@ -1,6 +1,6 @@
 $(function omplirtaula() {
     var array = [["avellana", 15.66, 90, 540, 20, 8, 10, 1, 11, 8, 7, 2], ["atmetlla", 28.22, 20, 980, 22, 12, 8, 4, 45, 9, 6, 8], ["oliva", 1.4, 80, 325, 35, 10, 8, 14, 19, 40, 20, 8], ["enciam", 10.4, 90, 925, 83, 28.6, 8, 87, 19, 9.8, 20, 8]];
-     var  table = document.getElementById("taula");
+    var table = document.getElementById("taula");
 
 
     for (var i = 0; i < array.length; i++) {
@@ -16,16 +16,16 @@ $(function omplirtaula() {
 
             switch (j) {
                 case 0:
-                   
-                        color = "White";
-                   
-                   
+
+                    color = "White";
+
+
                     break;
                 case 1:
                     if (array[i][j] > 30 || array[i][j] < 5) {
                         color = "Red";
                     }
-                    cell.innerHTML+=" graus"
+                    cell.innerHTML += " graus"
                     break;
                 case 2:
                     if (array[i][j] > 80 || array[i][j] < 10) {
@@ -87,7 +87,7 @@ $(function omplirtaula() {
                     cell.innerHTML += " L/m2"
                     break;
             }
-                cell.bgColor = color;
+            cell.bgColor = color;
 
         }
     }
