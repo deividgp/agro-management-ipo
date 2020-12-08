@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta charset="UTF-8">
+    <title>Agro management</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cultius.css">
+    <script type="text/javascript" src="js/cultius.js"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+    <br /><br />
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Cultius</th>
+                <th>Temperatura</th>
+                <th>Humitat Relativa</th>
+                <th>Pluja</th>
+                <th>Humitat en Fulla</th>
+                <th>Fotoperíode</th>
+                <th>Radiació</th>
+                <th>Evapotranspiració</th>
+                <th>Graus dia</th>
+                <th>Hores fred</th>
+                <th>Déficit de pressió de vapor</th>
+                <th>Humitat al sòl</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+                <td>Hi</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <fieldset class="border p-2 w-50 rounded-sm">
+        <legend class="w-25 p-3 h6">Llegenda de la taula cultius</legend>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="row" class="bg-success w-25 "></th>
+                    <td>Dins del límit</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="bg-danger w-25"></th>
+                    <td>Fora del límit</td>
+                </tr>
+            </thead>
+        </table>
+    </fieldset>
+    <div id="footer-placeholder"></div>
+    <script>
+        $(function () {
+            $("#footer-placeholder").load("footer.html");
+        });
+    </script>
+</body>
+
+</html>
