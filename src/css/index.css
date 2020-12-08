@@ -4,7 +4,17 @@ body {
     margin: 0;
     margin-left: 10px;
     padding: 0;
-    padding-top: 35px;
+    padding-top: 30px;
+}
+
+#login{
+    position: absolute;
+    top: 0px;
+    display: none;
+}
+
+#logged{
+    display: block;
 }
 
 #map {
@@ -21,10 +31,8 @@ body {
     margin-left: 10px;
 }
 
-#variables {
-    
-}
+#variables {}
 
-#alertes{
+#alertes {
     clear: left;
 }

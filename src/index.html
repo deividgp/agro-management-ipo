@@ -6,61 +6,58 @@
   <title>Agro management</title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index.css">
-  <script type="text/javascript" src="js/index.js">
-  </script>
+  <link rel="stylesheet" href="css/nav.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/nav.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpy3TyuffznEauekDIy9eQ81kzSW1iY-M&callback=initMap&libraries=&v=weekly"></script>
-  <script src="js/renderer.js"></script>
+  <script src="js/map.js"></script>
+
 </head>
 
 <body>
-
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Inici <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Variables</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cultius</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Zones</a>
-          </li>
-        </ul>
-
-        <a class="nav-item" href="#" id="profile"><img
-            src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg"
-            style="width:50px; height: 50px;">Perfil</a>
+  <div id="login">
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
-    </nav>
-  </header>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="onClick()">Submit</button>
+    </form>
+  </div>
+  <div id="logged">
+    <iframe src="nav.html" id="nav"></div>
+    <span>Zona X</span>
+    <br>
+    <span>Població (Latitud, Longitud)</span>
+    <br>
+    <span>Dia i hora</span>
+    <br>
+    <div id="map"></div>
+    <div id="variables">
+      <span id="variable">Variable 1 actual:</span>
+      <br>
+      <span id="variable">Variable 2 actual:</span>
+      <br>
+      <span id="variable">Variable 3 actual:</span>
+    </div>
+    <div id="alertes">
+      <span>Alertes 24 hores</span>
+      <br>
+      <span>Alerta 1</span>
+      <br>
+      <span>Alerta 2</span>
+    </div>
+  </div>
 
-  <span>Zona X</span>
-  <br>
-  <span>Població (Latitud, Longitud)</span>
-  <br>
-  <span>Dia i hora</span>
-  <br>
-  <div id="map"></div>
-  <div id="variables">
-    <span id="variable">Variable 1 actual:</span>
-    <br>
-    <span id="variable">Variable 2 actual:</span>
-    <br>
-    <span id="variable">Variable 3 actual:</span>
-  </div>
-  <div id="alertes">
-    <span>Alertes 24 hores</span>
-    <br>
-    <span>Alerta 1</span>
-    <br>
-    <span>Alerta 2</span>
-  </div>
 </body>
 
 </html>
