@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <meta charset="UTF-8">
     <title>Agro management</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -11,15 +10,164 @@
     <link rel="stylesheet" href="css/footer.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"
+        integrity="sha512-hZf9Qhp3rlDJBvAKvmiG+goaaKRZA6LKUO35oK6EsM0/kjPK32Yw7URqrq3Q+Nvbbt8Usss+IekL7CRn83dYmw=="
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/variables.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
     <script type="text/javascript" src="js/footer.js"></script>
 </head>
 
 <body>
-    <div id="nav"></div>
-    <br />
+    <div style="padding: 2%">
+        <div id="nav"></div>
+        <canvas id="line-chart" width="50%" height="15%"></canvas>
+        <br />
+        Cambia el temps:
+        <select id="unit">
+            <option value="hour">Hora</option>
+            <option value="day" selected="">Dia</option>
+            <option value="month">Mes</option>
+            <option value="year">Any</option>
+        </select>
+        <button id="update">Selecciona</button>
+        <button id="csv-file">Exporta a CSV</button>
+        <br /><br />
+        Saber la temperatura és un element essencial en el creixement, desenvolupament i productivitat dels cultius. La
+        majoria dels processos biològics s'acceleren amb temperatures altes, això pot ser positiu o negatiu, ja que
+        suposa una despesa d'energia per els processos que en depenen (respiració, capacitat d'assimilació de la planta,
+        etc).
+        <br /><br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Historial d'alertes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">Alerta ZONA 1 TEMPERATURA ELEVADA 36ºC 12/06/2020</th>                    
+                </tr>
+                <tr>
+                    <td scope="row">Alerta ZONA 2 TEMPERATURA ELEVADA 36ºC 3/06/2020</th>                    
+                </tr>
+                <tr>
+                    <td scope="row">Alerta ZONA 2 TEMPERATURA ELEVADA 4ºC 21/12/2019</th>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div id="footer"></div>
 </body>
+
+<script>
+    function generateData() {
+        var unit = document.getElementById('unit').value;
+        switch (unit) {
+            case 'hour':
+                var data = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60];
+                break;
+            case 'day':
+                var data = [0, 2, 4, 6, 8, 10, 12, 16, 18, 20, 22, 24];
+                break;
+            case 'month':
+                var data = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30];
+                break;
+            case 'year':
+                var data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+                break;
+
+        }
+        return data;
+    }
+    function generateVal1() {
+        var unit = document.getElementById('unit').value;
+        switch (unit) {
+            case 'hour':
+                var val1 = [25, 25, 25, 25, 26, 26, 25, 24, 24, 24, 24, 24, 24];
+                break;
+            case 'day':
+                var val1 = [17, 16, 16, 19, 21, 24, 23, 20, 19, 19, 17, 16];
+                break;
+            case 'month':
+                var val1 = [22, 24, 19, 17, 21, 20, 20, 22, 21, 20, 21, 23];
+                break;
+            case 'year':
+                var val1 = [14, 16, 19, 20, 22, 26, 30, 30, 28, 24, 18, 17, 15];
+                break;
+
+        }
+        return val1;
+    }
+
+    function generateVal2() {
+        var unit = document.getElementById('unit').value;
+        switch (unit) {
+            case 'hour':
+                var val2 = [27, 28, 27, 26, 26, 26, 26, 26, 27, 26, 27, 27, 27];
+                break;
+            case 'day':
+                var val2 = [19, 18, 17, 19, 23, 26, 25, 23, 19, 18, 18, 19];
+                break;
+            case 'month':
+                var val2 = [25, 23, 22, 19, 18, 21, 25, 24, 23, 20, 21, 25];
+                break;
+            case 'year':
+                var val2 = [15, 18, 21, 22, 24, 27, 32, 31, 29, 26, 21, 17, 16];
+                break;
+
+        }
+        return val2;
+    }
+
+    var chart = new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+            labels: generateData(),
+            datasets: [{
+                data: generateVal1(),
+                label: "Zona 1",
+                borderColor: "#3e95cd",
+                fill: false
+            }, {
+                data: generateVal2(),
+                label: "Zona 2",
+                borderColor: "#8e5ea2",
+                fill: false
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Temperatura'
+            }
+        }
+    });
+    document.getElementById('update').addEventListener('click', function () {
+        chart = new Chart(document.getElementById("line-chart"), {
+            type: 'line',
+            data: {
+                labels: generateData(),
+                datasets: [{
+                    data: generateVal1(),
+                    label: "Zona 1",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }, {
+                    data: generateVal2(),
+                    label: "Zona 2",
+                    borderColor: "#8e5ea2",
+                    fill: false
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'World population per region (in millions)'
+                }
+            }
+        });
+    });
+</script>
 
 </html>
