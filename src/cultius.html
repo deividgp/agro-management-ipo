@@ -7,16 +7,17 @@
     <title>Agro management</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/cultius.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/cultius.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
+    <script type="text/javascript" src="js/footer.js"></script>
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
-    <script>
-        $(function () {
-            $("#nav-placeholder").load("nav.html");
-        });
-    </script>
+    <div id="nav"></div>
     <br /><br />
     <table class="table table-bordered table-hover">
         <thead class="thead-light">
@@ -68,12 +69,7 @@
             </thead>
         </table>
     </fieldset>
-    <div id="footer-placeholder"></div>
-    <script>
-        $(function () {
-            $("#footer-placeholder").load("footer.html");
-        });
-    </script>
+    <div id="footer"></div>
 </body>
 
 </html>

@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/nav.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/nav.js"></script>
+  <script type="text/javascript" src="js/footer.js"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpy3TyuffznEauekDIy9eQ81kzSW1iY-M&callback=initMap&libraries=&v=weekly"></script>
   <script src="js/map.js"></script>
@@ -21,16 +23,15 @@
   <div id="login">
     <form id="loginForm">
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
+        <label for="exampleInputEmail1">Correu electrònic</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-          placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          placeholder="Correu">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="exampleInputPassword1">Contrasenya</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contrasenya">
       </div>
-      <button type="submit" class="btn btn-primary" onclick="onClick()">Submit</button>
+      <button type="submit" class="btn btn-primary" onclick="onClickLogIn()">Entra</button>
     </form>
   </div>
   <div id="logged">
@@ -57,7 +58,7 @@
       <span>Alerta 2</span>
     </div>
   </div>
-
+  <div id="footer" style="left: 0px;"></div>
 </body>
 
 </html>

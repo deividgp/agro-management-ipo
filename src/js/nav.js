@@ -1,6 +1,5 @@
 $(function () {
     $("#nav").load("nav.html");
-    document.getElementById("variables").className = "nav-item dropdown active";
 });
 
 function tancarSessio() {
@@ -8,6 +7,19 @@ function tancarSessio() {
     window.location.href = "index.html";
 }
 
-function onClick(){
-    document.getElementById("variables").className = "nav-item dropdown active";
+function onClickDropdown(page) {
+    switch (page) {
+        case 'inici':
+
+            break;
+        case 'variables':
+            document.getElementById('inici').className = "nav-item";
+            document.getElementById(page).className = "nav-item dropdown active";
+            break;
+        case 'cultius':
+            document.getElementById('inici').className = "nav-item";
+            document.getElementById(page).className = "nav-item active";
+            break;
+    }
+
 }

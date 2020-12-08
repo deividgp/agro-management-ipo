@@ -10,7 +10,7 @@ $(function () {
     }
 });*/
 
-function onClick() {
+function onClickLogIn() {
     var login = document.getElementById("login");
     var logged = document.getElementById("logged");
     if (document.getElementById("exampleInputEmail1").value = "a@a.com") {
