@@ -20,8 +20,13 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'login.html'));
 
+<<<<<<< HEAD
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
+=======
+  //z Open the DevTools.
+  //mainWindow.webContents.openDevTools();
+>>>>>>> pau
 };
 
 // This method will be called when Electron has finished
