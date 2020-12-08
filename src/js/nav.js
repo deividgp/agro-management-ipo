@@ -4,7 +4,7 @@ $(function () {
 
 function tancarSessio() {
     sessionStorage.clear();
-    window.location.href = "index.html";
+    window.location.href = "login.html";
 }
 
 function onClickDropdown(page) {

@@ -1,20 +1,6 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
+aside {
     margin-left: 10px;
-    padding: 0;
-    padding-top: 30px;
-}
-
-#login{
-    position: absolute;
-    top: 0px;
-    display: none;
-}
-
-#logged{
-    display: block;
+    padding-top: 70px;
 }
 
 #map {

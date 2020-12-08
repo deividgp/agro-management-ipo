@@ -1,7 +1,6 @@
 $(function () {
     if (!sessionStorage.getItem('key')) {
-        document.getElementById("logged").style.display = "none";
-        document.getElementById("login").style.display = "block";
+        window.location.href = "login.html";
     }
 });
 /*form.addEventListener('submit', (e)=>{
@@ -9,14 +8,3 @@ $(function () {
         console.log("hola");
     }
 });*/
-
-function onClickLogIn() {
-    var login = document.getElementById("login");
-    var logged = document.getElementById("logged");
-    if (document.getElementById("exampleInputEmail1").value = "a@a.com") {
-        document.getElementById("exampleInputEmail1").value = "hola";
-        login.style.display = "none";
-        logged.style.display = "block";
-        sessionStorage.setItem('key', 'value');
-    }
-}
