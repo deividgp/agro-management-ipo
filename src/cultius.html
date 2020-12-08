@@ -2,25 +2,73 @@
 <html>
 
 <head>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/cultius.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <meta charset="UTF-8">
     <title>Agro management</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/cultius.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/cultius.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
-
     <script type="text/javascript" src="js/nav.js"></script>
     <script type="text/javascript" src="js/footer.js"></script>
 
 </head>
 
 <body>
-    <div id="nav"></div>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" id="inici">
+                        <a class="nav-link" href="index.html">Inici</a>
+                    </li>
+                    <li class="nav-item dropdown" id="variables">
+                        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Variables</a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a class="dropdown-item" href="temperatura.html">Temperatura</a></li>
+                            <li><a class="dropdown-item" href="humitat-relativa.html">Humitat Relativa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" id="cultius">
+                        <a class="nav-link" href="cultius.html">Cultius</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown" id="zones">
+                        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Zones</a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a class="dropdown-item" onclick="onClickZona(1)" href="#">Zona 1</a></li>
+                            <li><a class="dropdown-item" onclick="onClickZona(2)" href="#">Zona 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-item  dropdown-toggle" href="#" data-toggle="dropdown"><img
+                                src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg"
+                                style="width:40px; height: 40px;"></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a class="dropdown-item" href="#">Perfil</a></li>
+                            <li><a class="dropdown-item" href="#">Configuració</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="tancarSessio()">Tancar sessió</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <br /><br />
     <table id="taula" class="table table-bordered table-hover">
         <thead class="thead-light">
@@ -40,14 +88,12 @@
             </tr>
         </thead>
         <tbody>
-            
-
         </tbody>
     </table>
     </div>
     <fieldset class="border p-2 w-50 rounded-sm">
         <legend class="w-25 p-3 h6">Llegenda de la taula cultius</legend>
-        <table  class="table">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="row" style="background-color:#90EE90"></th>
@@ -58,9 +104,14 @@
                     <td>Fora del límit</td>
                 </tr>
             </thead>
+            <tbody>
+            </tbody>
         </table>
     </fieldset>
-    <div id="footer"></div>
+    <br><br><br><br><br><br><br><br><br>
+    <footer>
+        <div id="footer"></div>
+    </footer>
 </body>
 
 </html>
