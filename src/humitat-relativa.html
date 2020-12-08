@@ -21,6 +21,7 @@
 <body>
     <div style="padding: 2%">
         <div id="nav"></div>
+        <br /><br />
         <canvas id="line-chart" width="50%" height="15%"></canvas>
         <br />
         Cambia el temps:
@@ -33,10 +34,7 @@
         <button id="update">Selecciona</button>
         <button id="csv-file">Exporta a CSV</button>
         <br /><br />
-        Saber la temperatura és un element essencial en el creixement, desenvolupament i productivitat dels cultius. La
-        majoria dels processos biològics s'acceleren amb temperatures altes, això pot ser positiu o negatiu, ja que
-        suposa una despesa d'energia per els processos que en depenen (respiració, capacitat d'assimilació de la planta,
-        etc).
+        Saber la humitat relativa ens dóna la proporció entre el vapor d'aigua present en el aire i el necessari per arribar a la saturació (100%). És el % respecte a la que caldria per saturar l'aire (100% d'aigua capaç de retenir) en les condicions de la temperatura del moment.
         <br /><br />
         <table class="table">
             <thead>
@@ -46,13 +44,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td scope="row">Alerta ZONA 1 TEMPERATURA ELEVADA 36ºC 12/06/2020</th>                    
+                    <td scope="row">Alerta ZONA 1 HUMITAT RELATIVA ELEVADA 97% 12/12/2020</th>
                 </tr>
                 <tr>
-                    <td scope="row">Alerta ZONA 2 TEMPERATURA ELEVADA 36ºC 3/06/2020</th>                    
+                    <td scope="row">Alerta ZONA 2 HUMITAT RELATIVA ELEVADA 94% 3/11/2020</th>
                 </tr>
                 <tr>
-                    <td scope="row">Alerta ZONA 2 TEMPERATURA ELEVADA 4ºC 21/12/2019</th>                    
+                    <td scope="row">Alerta ZONA 2 HUMITAT RELATIVA BAIXA 37% 21/06/2020</th>
                 </tr>
             </tbody>
         </table>
@@ -84,16 +82,16 @@
         var unit = document.getElementById('unit').value;
         switch (unit) {
             case 'hour':
-                var val1 = [25, 25, 25, 25, 26, 26, 25, 24, 24, 24, 24, 24, 24];
+                var val1 = [77, 77, 76, 76, 75, 75, 74, 72, 72, 72, 73, 73, 72];
                 break;
             case 'day':
-                var val1 = [17, 16, 16, 19, 21, 24, 23, 20, 19, 19, 17, 16];
+                var val1 = [93, 92, 86, 84, 79, 76, 75, 65, 68, 73, 78, 86];
                 break;
             case 'month':
-                var val1 = [22, 24, 19, 17, 21, 20, 20, 22, 21, 20, 21, 23];
+                var val1 = [76, 64, 68, 75, 81, 69, 59, 71, 68, 62, 65, 79];
                 break;
             case 'year':
-                var val1 = [14, 16, 19, 20, 22, 26, 30, 30, 28, 24, 18, 17, 15];
+                var val1 = [78, 76, 69, 67, 58, 56, 49, 51, 67, 61, 68, 71, 71];
                 break;
 
         }
@@ -104,16 +102,16 @@
         var unit = document.getElementById('unit').value;
         switch (unit) {
             case 'hour':
-                var val2 = [27, 28, 27, 26, 26, 26, 26, 26, 27, 26, 27, 27, 27];
+                var val2 = [67, 65, 67, 67, 67, 66, 67, 67, 68, 68, 69, 68, 68];
                 break;
             case 'day':
-                var val2 = [19, 18, 17, 19, 23, 26, 25, 23, 19, 18, 18, 19];
+                var val2 = [79, 78, 74, 68, 63, 58, 52, 54, 58, 61, 68, 65];
                 break;
             case 'month':
-                var val2 = [25, 23, 22, 19, 18, 21, 25, 24, 23, 20, 21, 25];
+                var val2 = [73, 64, 58, 59, 67, 64, 78, 65, 63, 52, 55, 51];
                 break;
             case 'year':
-                var val2 = [15, 18, 21, 22, 24, 27, 32, 31, 29, 26, 21, 17, 16];
+                var val2 = [84, 78, 78, 68, 56, 51, 45, 53, 59, 62, 60, 67, 84];
                 break;
 
         }
@@ -139,7 +137,8 @@
         options: {
             title: {
                 display: true,
-                text: 'Temperatura'
+                text: 'Humitat Relativa',
+                fontSize: 22
             }
         }
     });
@@ -163,7 +162,8 @@
             options: {
                 title: {
                     display: true,
-                    text: 'World population per region (in millions)'
+                    text: 'Humitat Relativa',
+                    fontSize: 22
                 }
             }
         });
